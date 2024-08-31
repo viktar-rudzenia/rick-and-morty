@@ -79,7 +79,12 @@ export default function CharactersList() {
       )}
 
       {selectedCharacter && (
-        <Modal open={!!selectedCharacter} footer={null} onCancel={() => setSelectedCharacter(null)}>
+        <Modal
+          open={!!selectedCharacter}
+          footer={null}
+          onCancel={() => setSelectedCharacter(null)}
+          centered
+        >
           <CharacterItemDetailed character={selectedCharacter} />
         </Modal>
       )}

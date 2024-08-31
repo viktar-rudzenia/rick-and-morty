@@ -80,7 +80,12 @@ export default function EpisodesList() {
       )}
 
       {selectedEpisode && (
-        <Modal open={!!selectedEpisode} footer={null} onCancel={() => setSelectedEpisode(null)}>
+        <Modal
+          open={!!selectedEpisode}
+          footer={null}
+          onCancel={() => setSelectedEpisode(null)}
+          centered
+        >
           <EpisodeItemDetailed episode={selectedEpisode} />
         </Modal>
       )}

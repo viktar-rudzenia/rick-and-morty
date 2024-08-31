@@ -80,7 +80,12 @@ export default function LocationsList() {
       )}
 
       {selectedLocation && (
-        <Modal open={!!selectedLocation} footer={null} onCancel={() => setSelectedLocation(null)}>
+        <Modal
+          open={!!selectedLocation}
+          footer={null}
+          onCancel={() => setSelectedLocation(null)}
+          centered
+        >
           <LocationItemDetailed location={selectedLocation} />
         </Modal>
       )}
