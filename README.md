@@ -2,7 +2,7 @@
 
 ## Link to application
 
-[LINK_WILL_BE_HERE]()
+[Link to the deployed application](https://rick-and-morty-alpha-five.vercel.app/)
 
 ## Stack
 
