@@ -14,6 +14,7 @@ import EpisodeItemDetailed from '../EpisodeItemDetailed';
 import EpisodeItem from '../EpisodeItem';
 
 import styles from './index.module.scss';
+import Image from 'next/image';
 
 export default function EpisodesList() {
   const [episodesPageIndex, setEpisodesPageIndex] = useState(1);
@@ -33,6 +34,21 @@ export default function EpisodesList() {
 
   return (
     <div className={styles.wrapper}>
+      <Image
+        className={styles.backgroundImageTop}
+        src="/rick-and-morty-portal-3-small.png"
+        alt="rick and morty falling in a loop of portals"
+        width={200}
+        height={200}
+      />
+      <Image
+        className={styles.backgroundImageBottom}
+        src="/rick-and-morty-portal-small.png"
+        alt="rick and morty comes from portal"
+        width={200}
+        height={200}
+      />
+
       {isEpisodesDataLoading && <Spin size="large" />}
       {!isEpisodesDataLoading && episodesDataError && (
         <Result

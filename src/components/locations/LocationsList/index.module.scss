@@ -17,9 +17,18 @@ $locationsPaginationHeight: 80px;
 .locationsList {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
     align-items: center;
     justify-content: space-evenly;
+    gap: 30px;
+    padding: 0 20px;
+
+    @media (max-width: $desktopBreakpoint) {
+        gap: 20px;
+    }
+
+    @media (max-width: $laptopBreakpoint) {
+        gap: 10px;
+    }
 }
 
 .paginationWrapper {
@@ -32,4 +41,16 @@ $locationsPaginationHeight: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.backgroundImageTop {
+    position: absolute;
+    top: 120px;
+    right: 10px;
+}
+
+.backgroundImageBottom {
+    position: absolute;
+    bottom: 150px;
+    left: 10px;
 }

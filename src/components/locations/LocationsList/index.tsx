@@ -14,6 +14,7 @@ import LocationItemDetailed from '../LocationItemDetailed';
 import LocationItem from '../LocationItem';
 
 import styles from './index.module.scss';
+import Image from 'next/image';
 
 export default function LocationsList() {
   const [locationsPageIndex, setLocationsPageIndex] = useState(1);
@@ -33,6 +34,21 @@ export default function LocationsList() {
 
   return (
     <div className={styles.wrapper}>
+      <Image
+        className={styles.backgroundImageTop}
+        src="/rick-and-morty-portal-small.png"
+        alt="rick and morty comes from portal"
+        width={200}
+        height={200}
+      />
+      <Image
+        className={styles.backgroundImageBottom}
+        src="/rick-and-morty-portal-2-small.png"
+        alt="rick and morty appears from portal"
+        width={200}
+        height={200}
+      />
+
       {isLocationsDataLoading && <Spin size="large" />}
       {!isLocationsDataLoading && locationsDataError && (
         <Result
