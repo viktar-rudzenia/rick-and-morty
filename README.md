@@ -18,6 +18,8 @@ Component library: [Ant Design](https://www.npmjs.com/package/antd)
 
 API: [SWR](https://www.npmjs.com/package/swr?activeTab=readme)
 
+Tests: [Jest](https://www.npmjs.com/package/jest) with [@Testing-library](https://www.npmjs.com/package/@testing-library/react)
+
 ## Setup instructions. How to start project locally?
 
 Install dependencies
@@ -41,3 +43,5 @@ This app allows you to learn more about the Rick and Morty universe, you can:
 - See all the characters of the animated series on the Characters page
 - Learn about all the locations on the Locations page
 - View details about each episode of the series on the Episodes page
+- To see more detailed information about an item in the list, simply left-click on the item.
+- To see the next or previous items in a list, use the pagination bar at the bottom of the screen.
