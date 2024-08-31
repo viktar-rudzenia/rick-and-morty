@@ -4,7 +4,7 @@
 
 [Link to the deployed application](https://rick-and-morty-alpha-five.vercel.app/)
 
-## Stack
+## Project overview. Stack
 
 [Next.js](https://www.npmjs.com/package/next) 14 (App Router approach)
 
@@ -18,9 +18,7 @@ Component library: [Ant Design](https://www.npmjs.com/package/antd)
 
 API: [SWR](https://www.npmjs.com/package/swr?activeTab=readme)
 
-State management (Store): [zustand](https://www.npmjs.com/package/zustand)
-
-## How to start project locally?
+## Setup instructions. How to start project locally?
 
 Install dependencies
 
@@ -35,3 +33,5 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## How to use the application?

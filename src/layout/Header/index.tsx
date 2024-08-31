@@ -1,5 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import cn from 'classnames';
 
 import { AllRoutesEnum } from '@/utils/constants';
 import { navigationBarLinks } from './constants';
@@ -7,6 +11,8 @@ import { navigationBarLinks } from './constants';
 import styles from './index.module.scss';
 
 export default function Header() {
+  const pathname = usePathname();
+
   return (
     <header className={styles.wrapper}>
       <div>
@@ -25,7 +31,12 @@ export default function Header() {
         <ul className={styles.navigationList}>
           {Object.values(navigationBarLinks).map(({ id, name, href }) => (
             <li key={id}>
-              <Link className={styles.navigationBarLink} href={href}>
+              <Link
+                className={cn(styles.navigationBarLink, {
+                  [styles.navigationBarLinkActive]: pathname === href,
+                })}
+                href={href}
+              >
                 {name}
               </Link>
             </li>

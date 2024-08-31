@@ -53,6 +53,7 @@ export default function EpisodesList() {
       )}
       {episodesData && episodes.length > 0 && (
         <>
+          <div className={styles.header}>All Episodes:</div>
           <div className={styles.episodesList}>
             {episodes?.map((episode) => (
               <EpisodeItem

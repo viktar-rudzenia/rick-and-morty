@@ -9,6 +9,11 @@ $locationsPaginationHeight: 60px;
     overflow-x: hidden;
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+}
+
 .locationsList {
     display: flex;
     flex-wrap: wrap;

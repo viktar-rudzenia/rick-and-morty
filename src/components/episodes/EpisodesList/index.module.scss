@@ -9,6 +9,11 @@ $episodesPaginationHeight: 60px;
     overflow-x: hidden;
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+}
+
 .episodesList {
     display: flex;
     flex-wrap: wrap;

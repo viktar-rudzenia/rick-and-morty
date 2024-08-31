@@ -53,6 +53,7 @@ export default function LocationsList() {
       )}
       {locationsData && locations.length > 0 && (
         <>
+          <div className={styles.header}>All Locations:</div>
           <div className={styles.locationsList}>
             {locations?.map((location) => (
               <LocationItem
