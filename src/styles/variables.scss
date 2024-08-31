@@ -1,0 +1,13 @@
+$base-font-size: 16px;
+
+// device breakpoints by width
+$mobileBreakpoint: 320px;
+$tabletBreakpoint: 480px;
+$laptopBreakpoint: 768px;
+$desktopBreakpoint: 1024px;
+$tvBreakpoint: 1200px;
+// app height breakpoint
+$minimumHeightForOneScreen: 800px;
+
+// default transition for css style transition
+$default-transition: all 0.1s ease-in;
