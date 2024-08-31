@@ -29,7 +29,7 @@ export default function CharactersList() {
     fetcher
   );
 
-  const { info: charactersMetaInfo, results: characters } = charactersData || {};
+  const { info: charactersMetaInfo, results: characters = [] } = charactersData || {};
 
   return (
     <div className={styles.wrapper}>
@@ -51,7 +51,7 @@ export default function CharactersList() {
           }
         />
       )}
-      {charactersData && (
+      {charactersData && characters.length > 0 && (
         <>
           <div className={styles.charactersList}>
             {characters?.map((character) => (
@@ -73,6 +73,11 @@ export default function CharactersList() {
           </div>
         </>
       )}
+
+      {!isCharactersDataLoading && !charactersDataError && characters.length === 0 && (
+        <div>Unfortunately, no characters were found.</div>
+      )}
+
       {selectedCharacter && (
         <Modal open={!!selectedCharacter} footer={null} onCancel={() => setSelectedCharacter(null)}>
           <CharacterItemDetailed character={selectedCharacter} />

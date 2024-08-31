@@ -29,7 +29,7 @@ export default function LocationsList() {
     fetcher
   );
 
-  const { info: locationsMetaInfo, results: locations } = locationsData || {};
+  const { info: locationsMetaInfo, results: locations = [] } = locationsData || {};
 
   return (
     <div className={styles.wrapper}>
@@ -51,7 +51,7 @@ export default function LocationsList() {
           }
         />
       )}
-      {locationsData && (
+      {locationsData && locations.length > 0 && (
         <>
           <div className={styles.locationsList}>
             {locations?.map((location) => (
@@ -73,6 +73,11 @@ export default function LocationsList() {
           </div>
         </>
       )}
+
+      {!isLocationsDataLoading && !locationsDataError && locations.length === 0 && (
+        <div>Unfortunately, no locations were found.</div>
+      )}
+
       {selectedLocation && (
         <Modal open={!!selectedLocation} footer={null} onCancel={() => setSelectedLocation(null)}>
           <LocationItemDetailed location={selectedLocation} />

@@ -29,7 +29,7 @@ export default function EpisodesList() {
     fetcher
   );
 
-  const { info: episodesMetaInfo, results: episodes } = episodesData || {};
+  const { info: episodesMetaInfo, results: episodes = [] } = episodesData || {};
 
   return (
     <div className={styles.wrapper}>
@@ -51,7 +51,7 @@ export default function EpisodesList() {
           }
         />
       )}
-      {episodesData && (
+      {episodesData && episodes.length > 0 && (
         <>
           <div className={styles.episodesList}>
             {episodes?.map((episode) => (
@@ -73,6 +73,11 @@ export default function EpisodesList() {
           </div>
         </>
       )}
+
+      {!isEpisodesDataLoading && !episodesDataError && episodes.length === 0 && (
+        <div>Unfortunately, no episodes were found.</div>
+      )}
+
       {selectedEpisode && (
         <Modal open={!!selectedEpisode} footer={null} onCancel={() => setSelectedEpisode(null)}>
           <EpisodeItemDetailed episode={selectedEpisode} />
