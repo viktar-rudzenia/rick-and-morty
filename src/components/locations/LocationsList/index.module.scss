@@ -1,0 +1,30 @@
+$locationsPaginationHeight: 60px;
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px 0 $locationsPaginationHeight 0;
+    overflow-x: hidden;
+}
+
+.locationsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.paginationWrapper {
+    height: $locationsPaginationHeight;
+    position: absolute;
+    width: 100%;
+    bottom: $footerHeight;
+    left: 0;
+    background-color: #e9f5ec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

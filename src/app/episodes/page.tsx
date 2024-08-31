@@ -1,5 +1,11 @@
+import EpisodesList from '@/components/episodes/EpisodesList';
+
 import styles from './page.module.scss';
 
 export default function Episodes() {
-  return <div className={styles.wrapper}>It is a Episodes page for Rick and Morty</div>;
+  return (
+    <div className={styles.wrapper}>
+      <EpisodesList />
+    </div>
+  );
 }

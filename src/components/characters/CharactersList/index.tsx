@@ -3,16 +3,17 @@
 import useSWR from 'swr';
 import { Button, Modal, Result, Spin } from 'antd';
 import { Pagination } from 'antd';
+import { useState } from 'react';
 
 import { fetcher } from '@/utils/fetcher';
 import { RickAndMortyEndpoints } from '@/utils/constants';
 import { CharacterInterface, CharactersResponseInterface } from '@/utils/interfaces';
 import CharacterItem from '../CharacterItem';
 
-import styles from './index.module.scss';
-import { useState } from 'react';
-import { CHARACTERS_PAGE_SIZE } from './constants';
 import CharacterItemDetailed from '../CharacterItemDetailed';
+import { CHARACTERS_PAGE_SIZE } from './constants';
+
+import styles from './index.module.scss';
 
 export default function CharactersList() {
   const [charactersPageIndex, setCharactersPageIndex] = useState(1);
