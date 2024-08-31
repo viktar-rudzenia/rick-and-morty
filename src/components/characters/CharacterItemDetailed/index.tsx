@@ -13,7 +13,7 @@ export default function CharacterItemDetailed({
   return (
     <Card
       className={styles.characterCard}
-      cover={<img src={character.image} alt={character.name} />}
+      cover={<img className={styles.image} src={character.image} alt={character.name} />}
     >
       <div>Name: {character.name}</div>
       <div>Gender: {character.gender}</div>

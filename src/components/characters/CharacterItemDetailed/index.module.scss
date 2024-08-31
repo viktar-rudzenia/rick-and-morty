@@ -3,3 +3,7 @@ div.characterCard {
     flex-direction: column;
     padding: 15px 15px 0;
 }
+
+.image {
+    @include unselectable;
+}

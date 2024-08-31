@@ -47,6 +47,7 @@ $episodesPaginationHeight: 80px;
     position: absolute;
     left: 10px;
     top: 100px;
+    @include unselectable;
 }
 
 .backgroundImageBottom {
@@ -54,4 +55,5 @@ $episodesPaginationHeight: 80px;
     position: absolute;
     bottom: 150px;
     right: 20px;
+    @include unselectable;
 }

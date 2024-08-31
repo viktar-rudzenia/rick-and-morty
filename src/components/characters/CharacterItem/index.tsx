@@ -16,7 +16,7 @@ export default function CharacterItem({
     <Card
       className={styles.characterCard}
       hoverable
-      cover={<img src={character.image} alt={character.name} />}
+      cover={<img className={styles.image} src={character.image} alt={character.name} />}
       onClick={() => setSelectedCharacter(character)}
     >
       {character.name}
