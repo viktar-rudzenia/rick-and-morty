@@ -5,21 +5,20 @@ import { CharacterInterface } from '@/utils/interfaces';
 
 import styles from './index.module.scss';
 
-export default function CharacterItem({
+export default function CharacterItemDetailed({
   character,
-  setSelectedCharacter,
 }: {
   character: CharacterInterface;
-  setSelectedCharacter: (character: CharacterInterface) => void;
 }): ReactElement {
   return (
     <Card
       className={styles.characterCard}
-      hoverable
       cover={<img src={character.image} alt={character.name} />}
-      onClick={() => setSelectedCharacter(character)}
     >
-      {character.name}
+      <div>Name: {character.name}</div>
+      <div>Gender: {character.gender}</div>
+      <div>Species: {character.species}</div>
+      <div>Status: {character.status}</div>
     </Card>
   );
 }

@@ -1,20 +1,22 @@
 'use client';
 
 import useSWR from 'swr';
-import { Button, Result, Spin } from 'antd';
+import { Button, Modal, Result, Spin } from 'antd';
 import { Pagination } from 'antd';
 
 import { fetcher } from '@/utils/fetcher';
 import { RickAndMortyEndpoints } from '@/utils/constants';
-import { CharactersResponseInterface } from '@/utils/interfaces';
+import { CharacterInterface, CharactersResponseInterface } from '@/utils/interfaces';
 import CharacterItem from '../CharacterItem';
 
 import styles from './index.module.scss';
 import { useState } from 'react';
 import { CHARACTERS_PAGE_SIZE } from './constants';
+import CharacterItemDetailed from '../CharacterItemDetailed';
 
 export default function CharactersList() {
   const [charactersPageIndex, setCharactersPageIndex] = useState(1);
+  const [selectedCharacter, setSelectedCharacter] = useState<null | CharacterInterface>(null);
 
   const {
     data: charactersData,
@@ -52,7 +54,11 @@ export default function CharactersList() {
         <>
           <div className={styles.charactersList}>
             {characters?.map((character) => (
-              <CharacterItem key={character.id} character={character} />
+              <CharacterItem
+                key={character.id}
+                character={character}
+                setSelectedCharacter={setSelectedCharacter}
+              />
             ))}
           </div>
           <div className={styles.paginationWrapper}>
@@ -65,6 +71,11 @@ export default function CharactersList() {
             />
           </div>
         </>
+      )}
+      {selectedCharacter && (
+        <Modal open={!!selectedCharacter} footer={null} onCancel={() => setSelectedCharacter(null)}>
+          <CharacterItemDetailed character={selectedCharacter} />
+        </Modal>
       )}
     </div>
   );
