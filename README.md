@@ -35,3 +35,9 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## How to use the application?
+
+This app allows you to learn more about the Rick and Morty universe, you can:
+
+- See all the characters of the animated series on the Characters page
+- Learn about all the locations on the Locations page
+- View details about each episode of the series on the Episodes page
